@@ -2,15 +2,31 @@ name: Build docker images
 
 on:
   workflow_dispatch:
-
-  push:
-    branches:
-      - 'main'
+    inputs:
+      logLevel:
+        description: 'Log level'
+        required: true
+        default: 'warning'
+        type: choice
+        options:
+        - info
+        - warning
+        - debug
+      environment:
+        description: 'Environment to run tests against'
+        type: environment
+        required: true
 
 jobs:
   docker:
     runs-on: ubuntu-latest
     steps:
+      - run: |
+          echo "Log level: $LEVEL"
+          echo "Environment: $ENVIRONMENT"
+        env:
+          LEVEL: ${{ inputs.logLevel }}
+          ENVIRONMENT: ${{ inputs.environment }}
       -
         name: Checkout
         uses: actions/checkout@v3
@@ -33,4 +49,6 @@ jobs:
           context: ./nginx
           platforms: linux/arm64,linux/amd64
           push: true
-          tags: altriabot/nginx:latest
+          tags: |
+            altriabot/nginx:latest
+            altriabot/nginx:${{ inputs.environment }}
