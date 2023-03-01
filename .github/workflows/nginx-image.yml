@@ -35,5 +35,5 @@ jobs:
           platforms: linux/arm64,linux/amd64
           push: true
           tags: |
-            altriabot/nginx:latest
             altriabot/nginx:${{ inputs.tags }}
+            altriabot/nginx:latest

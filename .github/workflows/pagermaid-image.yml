@@ -35,5 +35,5 @@ jobs:
           platforms: linux/arm64,linux/amd64
           push: true
           tags: |
-            altriabot/pagermaid_pyro:latest
             altriabot/pagermaid_pyro:${{ inputs.tags }}
+            altriabot/pagermaid_pyro:latest
