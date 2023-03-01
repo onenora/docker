@@ -1,5 +1,5 @@
 #FROM --platform=$TARGETPLATFORM alpine
-FROM python:3.11.2-alpine
+FROM python:alpine
 ENV TZ=Asia/Shanghai
 WORKDIR /pagermaid_pyro
 RUN apk add --no-cache gcc libc-dev linux-headers git curl neofetch && \

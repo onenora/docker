@@ -1,4 +1,4 @@
-FROM alpine:3.17
+FROM alpine
 LABEL maintainer="altriabot@gmail.com"
 ARG NGINX_VERSION=1.23.3
 
