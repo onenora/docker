@@ -1,4 +1,4 @@
-name: Build nginx docker images
+name: Build tmbot docker images
 
 on:
   workflow_dispatch:
