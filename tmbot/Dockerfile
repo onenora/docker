@@ -9,7 +9,7 @@ RUN  \
     && apk --no-cache add ${run_pkgs} ${build_pkgs} \
     && git clone https://github.com/noreph/TMBot /TMBot \
     && pip install --upgrade pip \
-    && pip3 install --root-user-action=ignore -r requirements.txt \
+    && pip install --root-user-action=ignore -r requirements.txt \
     && apk del --no-network ${build_pkgs} \
     && rm -rf /var/cache/apk/*
 

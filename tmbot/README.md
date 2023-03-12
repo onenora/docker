@@ -10,7 +10,7 @@
 docker run -it --restart=always --name=tmbot \
 -e API_ID=your api_id \
 -e API_HASH=your api_hash \
--v ${HOME}/bot/tmbot:/TMBot \
+-v ${HOME}/bot/tmbot:/TMBot/data \
 altriabot/onebot
 ```
 ## 指令说明
