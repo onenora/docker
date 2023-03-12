@@ -61,7 +61,8 @@ RUN \
   && mkdir /etc/nginx/cert
 
 COPY ./nginx.conf /etc/nginx/nginx.conf
-COPY ./index.html /etc/nginx/htnl/
+COPY ./html /etc/nginx/html
+
 VOLUME ["/var/cache/nginx"]
 
 EXPOSE 80 443

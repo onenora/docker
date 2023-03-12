@@ -2,11 +2,6 @@ name: Build pgmpyro docker images
 
 on:
   workflow_dispatch:
-    inputs:
-      tags:
-        description: 'add pgmpyro tags'
-        required: true
-        type: string
 
 jobs:
   docker:
@@ -34,6 +29,4 @@ jobs:
           context: ./pagermaid
           platforms: linux/arm64,linux/amd64
           push: true
-          tags: |
-            altriabot/pagermaid_pyro:${{ inputs.tags }}
-            altriabot/pagermaid_pyro:latest
+          tags: altriabot/pagermaid_pyro:latest

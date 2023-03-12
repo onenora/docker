@@ -2,11 +2,6 @@ name: Build nginx docker images
 
 on:
   workflow_dispatch:
-    inputs:
-      tags:
-        description: 'add nginx tags'
-        required: true
-        type: string
 
 jobs:
   docker:
@@ -34,6 +29,4 @@ jobs:
           context: ./nginx
           platforms: linux/arm64,linux/amd64
           push: true
-          tags: |
-            altriabot/nginx:${{ inputs.tags }}
-            altriabot/nginx:latest
+          tags: altriabot/nginx:latest
